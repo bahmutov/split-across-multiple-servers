@@ -5,11 +5,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
+    "start0": "serve -s public -p 3000",
     "start1": "serve -s public -p 3001",
     "start2": "serve -s public -p 3002",
-    "start3": "serve -s public -p 3003",
     "test": "cypress run",
-    "ci": "start-test start1 3001"
+    "ci": "start-test start0 3000"
   },
   "keywords": [],
   "author": "",

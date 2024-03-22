@@ -1,0 +1,21 @@
+name: ci
+on: push
+jobs:
+  tests:
+    # run 3 copies of the current job in parallel
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3]
+    steps:
+      - name: Run split Cypress tests 🧪
+        uses: cypress-io/github-action@v6
+        with:
+          # https://docs.github.com/en/actions/learn-github-actions/expressions
+          # job index starts from 0
+          start: npm run start${{ strategy.job-index }}
+        # pass the machine index and the total number
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
