@@ -1,0 +1,22 @@
+{
+  "name": "split-across-multiple-servers",
+  "version": "1.0.0",
+  "description": "Example using cypress-split to test different servers",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start1": "serve -s public -p 3001",
+    "start2": "serve -s public -p 3002",
+    "start3": "serve -s public -p 3003"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.7.0",
+    "cypress-split": "^1.21.0",
+    "prettier": "^3.2.5",
+    "serve": "^14.2.1",
+    "start-server-and-test": "^2.0.3"
+  }
+}
