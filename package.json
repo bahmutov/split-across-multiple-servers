@@ -7,7 +7,9 @@
   "scripts": {
     "start1": "serve -s public -p 3001",
     "start2": "serve -s public -p 3002",
-    "start3": "serve -s public -p 3003"
+    "start3": "serve -s public -p 3003",
+    "test": "cypress run",
+    "ci": "start-test start1 3001"
   },
   "keywords": [],
   "author": "",
