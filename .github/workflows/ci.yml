@@ -15,9 +15,9 @@ jobs:
       - name: Run split Cypress tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          # https://docs.github.com/en/actions/learn-github-actions/expressions
           # job index starts from 0
           start: npm run start${{ strategy.job-index }}
+          publish-summary: false
         # pass the machine index and the total number
         env:
           SPLIT: ${{ strategy.job-total }}
