@@ -11,8 +11,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       cypressSplit(on, config)
 
-      const jobIndex = parseNumber(process.env.SPLIT_INDEX)
-      const jobs = parseNumber(process.env.SPLIT)
+      const jobIndex = Number(process.env.SPLIT_INDEX)
+      const jobs = Number(process.env.SPLIT)
       if (jobIndex >= 0 && jobs > 1) {
         config.baseUrl = `http://localhost:300${jobIndex}`
         console.log(
