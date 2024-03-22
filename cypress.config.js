@@ -15,19 +15,9 @@ module.exports = defineConfig({
       // from the same variables you passed to the cypress run command
       // in the CI workflow file (like .github/workflows/ci.yml)
       // and determine what baseUrl to use
-      const jobIndex = Number(process.env.SPLIT_INDEX)
-      const jobs = Number(process.env.SPLIT)
-      if (jobIndex >= 0 && jobs > 1) {
-        // we can simply add the job index to the baseUrl
-        // or if we use more machines compute the modulo
-        config.baseUrl = `http://localhost:300${jobIndex % jobs}`
-        console.log(
-          'Job index %d of %d, using baseUrl %s',
-          jobIndex,
-          jobs,
-          config.baseUrl,
-        )
-      }
+
+      // we can simply add the job index to the baseUrl
+      // or if we use more machines compute the modulo
 
       // IMPORTANT: return the config object
       // with the changes you made
