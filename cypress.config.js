@@ -20,7 +20,7 @@ module.exports = defineConfig({
       if (jobIndex >= 0 && jobs > 1) {
         // we can simply add the job index to the baseUrl
         // or if we use more machines compute the modulo
-        config.baseUrl = `http://localhost:300${jobIndex % jobs}`
+        config.baseUrl = `http://localhost:300${jobIndex % 3}`
         console.log(
           'Job index %d of %d, using baseUrl %s',
           jobIndex,
