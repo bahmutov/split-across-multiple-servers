@@ -9,6 +9,9 @@ jobs:
       matrix:
         containers: [1, 2, 3]
     steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@v4
+
       - name: Run split Cypress tests 🧪
         uses: cypress-io/github-action@v6
         with:
