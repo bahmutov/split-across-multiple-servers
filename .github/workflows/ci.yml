@@ -15,11 +15,8 @@ jobs:
       - name: Run split Cypress tests 🧪
         uses: cypress-io/github-action@v6
         with:
-          # need to start a server on each machine
-          # on machine 0 use the start0 script
-          # on machine 1 use the start1 script
-          # on machine 2 use the start2 script
-          start: npm run start0
-        # TODO: pass the environment variables
-        # to the cypress-split plugin
-        # https://github.com/bahmutov/cypress-split
+          start: npm run start${{ strategy.job-index }}
+          publish-summary: false
+        env:
+          SPLIT: ${{ strategy.job-total }}
+          SPLIT_INDEX: ${{ strategy.job-index }}
